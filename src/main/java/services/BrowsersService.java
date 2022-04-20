@@ -1,3 +1,6 @@
+package services;
+
+import configuration.ReadProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.openqa.selenium.WebDriver;
@@ -8,11 +11,11 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.util.Locale;
 
-public class BrowserService {
+public class BrowsersService {
     private WebDriver driver = null;
     private DriverManagerType driverManagerType = null;
 
-    public BrowserService() {
+    public BrowsersService() {
         switch (ReadProperties.browserName().toLowerCase(Locale.ROOT)) {
             case "chrome":
                 driverManagerType = DriverManagerType.CHROME;
