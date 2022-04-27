@@ -3,17 +3,16 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
 
 public class LoginPage {
     private WebDriver driver;
 
     // Блок описания селекторов для элементов
-    private By emailInputLocator = By.id("name");
-    private By pswInputLocator = By.id("password");
-    private By logInButtonLocator = By.id("button_primary");
+    private final By emailInputLocator = By.id("name");
+    private final By pswInputLocator = By.id("password");
+    private final By logInButtonLocator = By.id("button_primary");
 
-    // Блок иницализации
+    // Блок инициализации
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
