@@ -9,7 +9,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.time.Duration;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class BrowsersService {
     private WebDriver driver = null;
@@ -39,6 +41,13 @@ public class BrowsersService {
     public WebDriver getDriver() {
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
+
+        // играемся со неявным временем ожидания
+        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);      // use для legacy кода
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(60));
+
 
         return this.driver;
     }
