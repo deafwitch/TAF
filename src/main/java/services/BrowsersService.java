@@ -44,7 +44,7 @@ public class BrowsersService {
 
         // играемся со неявным временем ожидания
         //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);      // use для legacy кода
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));       // было - 10
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(60));
 
