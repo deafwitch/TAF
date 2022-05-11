@@ -50,7 +50,7 @@ public class ActionsTest extends BaseTest {
         WaitsService wait = new WaitsService(driver, Duration.ofSeconds(10));
 
         WebElement fileUploadPath = wait.waitForExists(By.id("file-upload"));
-        fileUploadPath.sendKeys("C:\\1.png");
+        fileUploadPath.sendKeys("E:\\IT\\code\\resources\\calendar_2022.png");
         wait.waitForExists(By.id("file-submit")).submit();
 
         Thread.sleep(3000);
