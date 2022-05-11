@@ -20,7 +20,7 @@ public class BaseTest {
         loginStep = new LoginStep(driver);
         navigationStep = new NavigationStep(driver);
 
-        driver.get(ReadProperties.getUrl());
+        //driver.get(ReadProperties.getUrl());              //disabled для ускорения остального обучения
     }
 
     @AfterMethod
