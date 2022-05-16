@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+    <name>test project</name>
+    <announcement>big announcement text</announcement>
+    <show_announcement>true</show_announcement>
+</project>
