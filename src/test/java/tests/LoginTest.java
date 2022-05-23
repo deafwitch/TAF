@@ -24,6 +24,9 @@ public class LoginTest extends BaseTest {
                 loginStep.incorrectLogin("sdsd", ReadProperties.password()).getErrorTextElement().getText(),
                 "Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
+
+        // заведомо вносим ошибку для проверки скриншота
+        Assert.assertTrue(false);
     }
 
     @Test

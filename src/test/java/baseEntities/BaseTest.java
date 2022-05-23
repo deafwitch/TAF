@@ -1,22 +1,26 @@
 package baseEntities;
 
 import com.google.gson.Gson;
+import configuration.ReadProperties;
 import models.Project;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import services.BrowsersService;
 import steps.LoginStep;
 import steps.NavigationStep;
+import utils.Listener;
 
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+@Listeners(Listener.class)
 public class BaseTest {
-    protected WebDriver driver;
+    public WebDriver driver;
     protected LoginStep loginStep;
     protected NavigationStep navigationStep;
 
@@ -35,7 +39,7 @@ public class BaseTest {
         loginStep = new LoginStep(driver);
         navigationStep = new NavigationStep(driver);
 
-        //driver.get(ReadProperties.getUrl());              //disabled для ускорения остального обучения
+        driver.get(ReadProperties.getUrl());              //disabled для ускорения остального обучения
     }
 
     @AfterMethod
