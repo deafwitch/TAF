@@ -2,8 +2,14 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.io.ByteArrayInputStream;
+import java.util.UUID;
 
 public class LoginTest extends BaseTest {
 
@@ -25,8 +31,12 @@ public class LoginTest extends BaseTest {
                 "Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
 
+        Allure.addAttachment(UUID.randomUUID().toString(), new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+
         // заведомо вносим ошибку для проверки скриншота
         Assert.assertTrue(false);
+
+        Allure.addAttachment(UUID.randomUUID().toString(), new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
 
     @Test
