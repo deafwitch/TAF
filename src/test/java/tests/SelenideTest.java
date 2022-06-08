@@ -45,12 +45,12 @@ public class SelenideTest {
     }
 
     @BeforeMethod
-    public void setupTest(){
+    public void setupTest() {
         Configuration.baseUrl = ReadProperties.getUrl();
     }
 
     @AfterMethod
-    public void closeTest(){
+    public void closeTest() {
         $(".navigation-username").click();
         $(By.id("navigation-user-logout")).click();
         sleep(2000);
