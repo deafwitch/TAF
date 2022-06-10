@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class RegresInTest {
+public class ReqresInTest {
 
     @Test
     public void simpleStepByStepApiTest() {
@@ -30,8 +30,7 @@ public class RegresInTest {
         // Get Response Status
         int statusCode = response.getStatusCode();
         System.out.println("Status Code: " + statusCode);
-        Assert.assertEquals(statusCode, 200);
-        Assert.assertEquals(statusCode, HttpStatus.SC_OK);
+        Assert.assertEquals(statusCode, HttpStatus.SC_OK);  // или Assert.assertEquals(statusCode, 200);
 
         // Get Response Body
         String responseBody = response.getBody().asString();

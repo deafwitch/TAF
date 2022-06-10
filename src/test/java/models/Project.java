@@ -9,12 +9,12 @@ import lombok.EqualsAndHashCode;
 @Builder
 @EqualsAndHashCode
 public class Project {
-        private String name;
-        private String announcement;
-        private boolean isShowAnnouncement;
-        @SerializedName(value = "suite_mode")
-        private int typeOfProject;
-        @SerializedName(value = "is_completed")
-        private boolean isCompleted;
-        private User user;
+    private String name;
+    private String announcement;
+    private boolean isShowAnnouncement;
+    @SerializedName(value = "suite_mode")
+    private int typeOfProject;
+    @SerializedName(value = "is_completed")
+    private boolean isCompleted;
+    private User user;
 }
