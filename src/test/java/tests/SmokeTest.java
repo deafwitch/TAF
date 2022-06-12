@@ -48,6 +48,8 @@ public class SmokeTest {
         Thread.sleep(2000);
         selectSex.selectByVisibleText("женский");
         Thread.sleep(2000);
+
+        driver.close();
     }
 
 
