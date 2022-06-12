@@ -50,6 +50,7 @@ public class SmokeTest {
         Thread.sleep(2000);
 
         driver.close();
+
     }
 
 
