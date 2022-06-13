@@ -1,12 +1,10 @@
 package helpers;
 
-import com.google.gson.Gson;
 import configuration.Endpoints;
 import io.restassured.response.Response;
 import models.Project;
 import org.apache.http.HttpStatus;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;

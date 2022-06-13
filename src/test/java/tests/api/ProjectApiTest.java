@@ -1,6 +1,5 @@
 package tests.api;
 
-import helpers.ProjectHelper;
 import models.Project;
 import org.apache.http.HttpStatus;
 import org.testng.Assert;
@@ -16,7 +15,7 @@ public class ProjectApiTest extends BaseApiTest {
                 .announcement("Test An")
                 .build();
 
-        Assert.assertTrue(projectHelper.getProject(1).equals(expectedProject));
+        Assert.assertEquals(projectHelper.getProject(1),expectedProject);
     }
 
     @Test
@@ -26,9 +25,14 @@ public class ProjectApiTest extends BaseApiTest {
 
     @Test
     public void positiveCountProjectsTest() {
-        Assert.assertEquals(projectHelper.getAllProjects().size(), 5);
+        Assert.assertEquals(projectHelper.getAllProjects().size(), 12);
 
         // etc
         Assert.assertEquals(projectHelper.getAllProjects().get(0).getName(), "WP Test");
+    }
+
+    @Test
+    public void getParamFromConsole(){
+        System.out.println(System.getProperty("psw"));
     }
 }
