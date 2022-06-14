@@ -3,7 +3,6 @@ package tests.api;
 import com.google.gson.Gson;
 import configuration.Endpoints;
 import configuration.ReadProperties;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
@@ -14,7 +13,6 @@ import models.ProjectType;
 import org.apache.http.HttpStatus;
 import org.apache.http.protocol.HTTP;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -159,7 +157,6 @@ public class TestRailApiTest extends BaseApiTest {
                 .statusCode(HttpStatus.SC_OK)
                 .body("id", is(1))
                 .body("name", equalTo("WP Test"));
-
     }
 
     @Test

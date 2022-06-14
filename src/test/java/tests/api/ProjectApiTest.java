@@ -15,7 +15,7 @@ public class ProjectApiTest extends BaseApiTest {
                 .announcement("Test An")
                 .build();
 
-        Assert.assertEquals(projectHelper.getProject(1),expectedProject);
+        Assert.assertEquals(projectHelper.getProject(1), expectedProject);
     }
 
     @Test
@@ -25,14 +25,15 @@ public class ProjectApiTest extends BaseApiTest {
 
     @Test
     public void positiveCountProjectsTest() {
-        Assert.assertEquals(projectHelper.getAllProjects().size(), 12);
+        Assert.assertEquals(projectHelper.getAllProjects().size(), 45);
 
-        // etc
+        // etc.; not related to the positiveCountProjectsTest`s logic
         Assert.assertEquals(projectHelper.getAllProjects().get(0).getName(), "WP Test");
     }
 
     @Test
-    public void getParamFromConsole(){
+    public void getParamFromConsole() {
+        // maven "param from console" example
         System.out.println(System.getProperty("psw"));
     }
 }

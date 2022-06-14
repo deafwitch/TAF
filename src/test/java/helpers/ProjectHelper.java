@@ -29,10 +29,10 @@ public class ProjectHelper {
     }
 
     public List<Project> getAllProjects() {
-        Response response = given()
-                .get(Endpoints.GET_PROJECTS);
-
-        return response.getBody().jsonPath().getList("projects", Project.class);
+        return given()
+                .get(Endpoints.GET_PROJECTS)
+                .getBody()
+                .jsonPath().getList("projects", Project.class);
     }
 
     public Response getAllProjectsResponse() {
